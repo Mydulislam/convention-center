@@ -13,7 +13,7 @@
 <body>
     <header>
         <!--************************ Navbar Design ****************************************-->
-        <nav class="navbar navbar-expand-lg bg-light">
+        <nav class="navbar navbar-expand-lg bg-light fixed-top">
             <div class="container">
               <a class="navbar-brand h1" href="#">Abacus Convention Center</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,16 +22,16 @@
               <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="#home">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="#about-us">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#contact">Contact</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link">Subscribe</a>
+                    <a class="nav-link" href="#subscribe">Subscribe</a>
                   </li>
                 </ul>
               </div>
@@ -44,7 +44,7 @@
               <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
               <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-            <div class="carousel-inner">
+            <div class="carousel-inner" id="home">
               <div class="carousel-item active" data-bs-interval="10000">
                 <img src="images2/firstBanner.png" class="d-block img-fluid mobile-height" alt="...">
                 <div class="carousel-caption d-md-block m-auto padding">
@@ -85,17 +85,27 @@
 
     <main class="container pe-4">
         <!--****************************** Wedding Gallary***************************** -->
-       <section class="my-5">
+       <section class="my-5" id="about-us">
         <div class="card border-0">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 align-items-center my-1 g-5 mobile-flex-reverse">
               <div class="col">
                 <img src="images2/wedding1.jpg" class="img-fluid rounded" alt="...">
               </div>
-              <div class="col">
+              <div class="col position-relative">
                 <div class="card-body p-0">
                   <h1 class="card-title">Every moment is Precious</h1>
                   <p class="card-text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
                   <a href="#" class="btn btn-primary rounded-0">Explore our album <img src="icons/arrow-forward.svg" alt=""></a>
+                </div>
+                <!-- Bootstrap Toast -->
+                <div class="toast show align-items-center text-bg-light border border-primary border-5 border-bottom-0 border-top-0 border-end-0 position-absolute top-50 start-50 translate-middle-y" role="alert" aria-live="assertive" aria-atomic="true">
+                  <div class="d-flex ps-3">
+                    <img src="icons/Vector.svg" alt="">
+                    <div class="toast-body">
+                      20% off on next booking.
+                    </div>
+                    <button type="button" class="btn-close btn-close-dark me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -104,7 +114,7 @@
         
        <!--************************************* Pricing Plan *******************************-->
 
-       <section class="my-5 py-3">
+       <section class="my-5 py-3" id="subscribe">
         <h1 class="text-center my-5">Our package</h1>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
             <div class="col mt-5">
@@ -220,7 +230,7 @@
 
        <!-- *********************** Happy Client Section ************************************* -->
 
-       <section class="my-5">
+       <section class="my-5" id="contact">
             <h1 class="text-center my-5">Happy Clients says</h1>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 <div class="col my-client">
@@ -333,5 +343,16 @@
         </div>
     </footer>
     <script src="bootstrap-file/bootstrap.min.js"></script>
+    <script>
+      const toastTrigger = document.getElementById('liveToastBtn')
+const toastLiveExample = document.getElementById('liveToast')
+if (toastTrigger) {
+  toastTrigger.addEventListener('click', () => {
+    const toast = new bootstrap.Toast(toastLiveExample)
+
+    toast.show()
+  })
+}
+    </script>
 </body>
 </html>
