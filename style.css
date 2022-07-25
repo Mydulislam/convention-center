@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap');
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif; */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+h1,p,a{
+    font-family: 'Poppins', sans-serif
+}
+.my-shadow{
+        /* box-shadow: 0px 10px 52px rgb(13 230 85 / 47%); */
+        box-shadow: 0px 42px 34px rgb(63 135 245 / 25%);
+        background-image: url(icons/watermark.svg);
+        /* box-shadow: rgb(20 255 74 / 10%) 0px 30px 0px, rgb(85 255 255 / 10%) 13px 35px 0px; */
+        background-repeat: no-repeat;
+        /* background-size: cover; */
+        background-position: right;
+        position: relative;
+}
+.my-shadow::before{
+    content: "Hot";
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    background: red;
+    top: -10px;
+    right: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 13px;
+    font-family: 'Poppins',sans-serif;
+}
+.padding{
+    padding-left:24px;
+    padding-right:24px;
+    width: 50%;
+}
+@media (max-width: 576px){
+    .mobile-height{
+        min-height:80vh;
+    }
+    .padding{
+        width: 75%;
+    }
+    .mobile-flex-reverse{
+        flex-wrap: wrap-reverse;
+    }
+    .my-client{
+        width:75%;
+        margin: 16px auto;
+    }
+    footer{
+        display: none;
+    }
+
+}
+@media (min-width: 576px) and (max-width: 768px) {
+    .mobile-height{
+        min-height:80vh;
+    }
+    .padding{
+        width: 75%;
+    }
+ }
